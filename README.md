@@ -14,17 +14,6 @@ A Cyberpunk 2077 "Deep Breach" inspired shader for [Ghostty](https://ghostty.org
 
 ## Installation
 
-### Automatic (Recommended)
-
-Run the included installation script to automatically detect the shader path and update your Ghostty config:
-
-```bash
-chmod +x install.sh
-./install.sh
-```
-
-### Manual
-
 1. Copy `blackwall.glsl` to a permanent location on your system.
 2. In your Ghostty config (usually `~/.config/ghostty/config`), add or update the following line:
 
