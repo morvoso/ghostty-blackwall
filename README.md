@@ -24,14 +24,24 @@ The classic analog CRT Deep Breach shader featuring:
 
 ![Preview](./preview.png)
 
-## Installation
+## Installation & Recommended Config
 
-1. Copy either `blackwall-dotmatrix.glsl` or `blackwall.glsl` to a permanent location on your system (e.g., `~/.config/ghostty/shaders/`).
-2. In your Ghostty config (usually `~/.config/ghostty/config`), specify your chosen shader:
+To get the full **Tron / Blackwall Cyberpunk Red** aesthetic (with high-contrast ruby red glow, pure pitch black background, and continuous AI core breathing / power surges), configure your Ghostty (`~/.config/ghostty/config`) as follows:
 
 ```conf
-# Use the Flat LED Dot-Matrix Tron Red Edition
+# 1. Load the shader (copy blackwall-dotmatrix.glsl to your shaders folder first)
 custom-shader = ~/.config/ghostty/shaders/blackwall-dotmatrix.glsl
+
+# 2. Enable continuous shader animations (REQUIRED for AI Core breathing & rare power surges!)
+custom-shader-animation = true
+
+# 3. Recommended Red Theme & Background (ensures maximum ruby red glow & pure #000000 contrast)
+theme = blackwall-red
+background-opacity = 1.0
+
+# 4. Recommended Cursor (solid glowing block under the dot-matrix grille)
+cursor-style = block
+cursor-opacity = 1.0
 ```
 
 ## Configuration
