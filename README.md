@@ -1,24 +1,33 @@
-# Ghostty Blackwall Shader
+# Ghostty Blackwall Shader Collection
 
-A Cyberpunk 2077 "Deep Breach" inspired shader for [Ghostty](https://ghostty.org/). This shader features high-contrast red UI elements, rare AI breaches, and heavy analog CRT characteristics.
+A Cyberpunk 2077 "Blackwall / Deep Breach" inspired shader collection for [Ghostty](https://ghostty.org/). This repository features high-contrast Tron/Cyberpunk red UI elements, glowing LED dot-matrix masks, rare Blackwall electrical power surges, and analog CRT characteristics.
 
 ![Preview](./preview.png)
 
-## Features
+## Included Shaders
 
-- **Retro CRT Aesthetics:** Includes scanlines, screen curvature, bloom, and vignette for a vintage terminal feel.
-- **Cyberpunk 2077 "Blackwall" Theme:** High-contrast red tint inspired by the Deep Breach UI.
-- **Dynamic Glitches:** Dual-cycle glitch system that introduces subtle artifacts and rare "AI breaches."
-- **Procedural Background:** Subtle "code snippets" and streamer layers that add depth without being distracting.
-- **Chromatic Aberration:** Subtle color fringing that increases towards the screen edges.
+### 1. `blackwall-dotmatrix.glsl` (Flat Tron Red LED Dot-Matrix - Recommended)
+Calibrated for **100% razor-sharp readability** across modern TUIs (`neovim`, `fastfetch`) while delivering an electrifying Cyberpunk Blackwall Netrunner aesthetic:
+- **Flat Edge-to-Edge Display (`warp = 0.0`):** Zero screen bulging or corner cutoffs.
+- **High-Intensity Circular LED Dot-Matrix:** Breaks character strokes into crisp, glowing red matrix diodes (`● ● ●`) separated by deep aperture micro-gaps.
+- **Tron Ruby Red Laser Bloom (`getEDEXBloom`):** 36-tap rich neon glow radiating from crisp text onto a rock-solid `#000000` pitch black background.
+- **AI Core Breathing & Rare Power Surges (`getGlowFlicker`):** A hypnotic ±15% breathing pulse combined with rare, intense 150ms randomized high-voltage electrical flicker surges (~18% chance every 3 seconds).
+- **Red Gradient Theme & Digital Grunge:** Subtle vertical color gradient with 3% analog/digital monitor static.
+
+### 2. `blackwall.glsl` (Classic Curved CRT Deep Breach Edition)
+The classic analog CRT Deep Breach shader featuring:
+- **CRT Curvature (`CURVATURE = 0.08`):** Rounded retro screen geometry.
+- **Procedural Code Snippets & Streamers:** Subtle tech data bursts and data trails along screen edges.
+- **Dual-Cycle Glitch System:** Periodic subtle artifacts and rare AI breach glitches.
 
 ## Installation
 
-1. Copy `blackwall.glsl` to a permanent location on your system.
-2. In your Ghostty config (usually `~/.config/ghostty/config`), add or update the following line:
+1. Copy either `blackwall-dotmatrix.glsl` or `blackwall.glsl` to a permanent location on your system (e.g., `~/.config/ghostty/shaders/`).
+2. In your Ghostty config (usually `~/.config/ghostty/config`), specify your chosen shader:
 
 ```conf
-custom-shader = /path/to/blackwall.glsl
+# Use the Flat LED Dot-Matrix Tron Red Edition
+custom-shader = ~/.config/ghostty/shaders/blackwall-dotmatrix.glsl
 ```
 
 ## Configuration
