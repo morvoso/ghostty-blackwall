@@ -59,8 +59,8 @@ float getDotMatrixMask(vec2 fragCoord) {
     // Circular dot shape inside each cell
     float dist = length(dotGrid - vec2(0.5, 0.5));
     
-    // Intense dot boundary: ultra-bright dot center (1.0), deep aperture grille gap (0.0)
-    return smoothstep(0.48, 0.20, dist);
+    // Soft dot boundary: gentle dot center, subtle grille gap
+    return smoothstep(0.55, 0.25, dist);
 }
 
 // ==========================================
@@ -132,10 +132,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     if (lum > 0.02) {
         col += getGrungeNoise(st, t) * col;
         
-        // Apply intense Dot-Matrix / LED grid mask to characters!
-        // Divides solid strokes into crisp, glowing circular matrix dots (● ● ●)
+        // Apply subtle Dot-Matrix / LED grid mask to characters!
+        // Divides solid strokes into soft, glowing circular matrix dots (● ● ●)
         float dotMask = getDotMatrixMask(fragCoord);
-        col *= mix(0.15, 1.45, dotMask);
+        col *= mix(0.70, 1.15, dotMask);
     }
     
     // Clean viewport edge vignette preserving pitch black
